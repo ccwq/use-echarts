@@ -1,0 +1,83 @@
+{
+    "name": "use-echarts",
+    "version": "0.1.0",
+    "description": "Vue 3 ECharts wrapper + composable (useEcharts) with slots and resize handling.",
+    "license": "MIT",
+    "type": "module",
+    "author": "",
+    "keywords": [
+        "vue",
+        "vue3",
+        "echarts",
+        "charts",
+        "composable",
+        "hook"
+    ],
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "homepage": "",
+    "bugs": {
+        "url": ""
+    },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "files": [
+        "dist",
+        "README.md",
+        "README.zh-CN.md",
+        "LICENSE"
+    ],
+    "sideEffects": true,
+    "scripts": {
+        "clean": "rimraf dist coverage",
+        "build": "npm run clean && vite build && vue-tsc -p tsconfig.build.json --emitDeclarationOnly",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "pack:check": "npm pack --dry-run",
+        "prepublishOnly": "npm run build && npm run test"
+    },
+    "peerDependencies": {
+        "echarts": "^5.0.0",
+        "vue": "^3.0.0"
+    },
+    "peerDependenciesMeta": {
+        "echarts-gl": {
+            "optional": true
+        },
+        "echarts-liquidfill": {
+            "optional": true
+        }
+    },
+    "dependencies": {
+        "lodash": "^4.17.21"
+    },
+    "devDependencies": {
+        "@types/node": "^22.0.0",
+        "@vitejs/plugin-vue": "^5.0.0",
+        "@vitejs/plugin-vue-jsx": "^4.0.0",
+        "@vue/test-utils": "^2.4.0",
+        "jsdom": "^25.0.0",
+        "pug": "^3.0.0",
+        "less": "^4.2.0",
+        "rimraf": "^6.0.0",
+        "typescript": "^5.6.0",
+        "vite": "^6.0.0",
+        "vitest": "^2.0.0",
+        "vue": "^3.4.0",
+        "vue-tsc": "^2.0.0",
+        "echarts": "^5.5.0"
+        ,
+        "echarts-gl": "^2.0.9",
+        "echarts-liquidfill": "^3.1.0"
+    }
+}

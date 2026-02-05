@@ -1,0 +1,15 @@
+src
+tests
+openspec
+.opencode
+.codex
+.history
+
+*.log
+
+vite.config.*
+vitest.config.*
+tsconfig.*
+
+node_modules
+coverage
