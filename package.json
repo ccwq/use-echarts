@@ -1,6 +1,6 @@
 {
     "name": "@ioto/use-echarts",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Vue 3 ECharts wrapper + composable (useEcharts) with slots and resize handling.",
     "license": "MIT",
     "type": "module",

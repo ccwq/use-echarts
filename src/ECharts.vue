@@ -14,7 +14,7 @@ import { defineComponent, getCurrentInstance, onBeforeUnmount, onMounted, ref, w
 import * as Echarts from "echarts";
 
 //@ts-ignore
-import _ from "lodash";
+import {throttle} from "lodash";
 
 const loadOptionalEchartsPlugins = async () => {
     try {
@@ -99,7 +99,7 @@ export default defineComponent({
             //-----------------
 
             // 尺寸变化
-            const deInstResize = _.throttle((wh: {width: number, height: number}) => inst.resize(wh), props.throttleDelay);
+            const deInstResize = throttle((wh: {width: number, height: number}) => inst.resize(wh), props.throttleDelay);
             const resizeObserver = new ResizeObserver(entries => {
                 for (let entry of entries) {
                     const {width, height} = entry.contentRect
@@ -116,7 +116,6 @@ export default defineComponent({
             //-- 尺寸变化
 
             // await new Promise(r => setTimeout(r, 0));
-
             const header = rootEl.value!.querySelector(".echarts-header");
             const footer = rootEl.value!.querySelector(".echarts-footer");
             const body = rootEl.value!.querySelector(".echarts-body");
@@ -144,8 +143,6 @@ export default defineComponent({
             })
             //-----------------
         })
-
-
         return {
             styles,
             rootEl,
