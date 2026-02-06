@@ -22,7 +22,7 @@ const { EChartComponent, setOptions } = useEcharts({});
 setOptions({
     series: [{ type: "bar", data: [1, 2, 3] }],
 });
-``
+```
 
 在 Vue 组件中渲染 `EChartComponent` 即可。
 

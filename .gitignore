@@ -7,3 +7,7 @@ coverage
 
 # local history
 .history
+
+/openspec
+.vitepress
+./openspec/
